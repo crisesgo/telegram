@@ -2,7 +2,7 @@ name: enviar_hora
 
 on:
   push:
-    braches: [ main ]
+    branches: [ main ]
 
 jobs:
   build: 
@@ -13,21 +13,21 @@ jobs:
       # added or changed files to the repository.
       contents: write
       
-  steps:
-    - name: Checkout del repo
-      uses: actions/checkout@v5
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v5
     
-    - name: Setup Python
-      uses: actions/setup-python@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
           python-version: '3.13' 
-    - name: Run script
-      run: python enviar_hora.py
+      - name: Run script
+        run: python enviar_hora.py
 
-    - name: Commit and Push del log
-       uses: stefanzweifel/git-auto-commit-action@v6
-         with:
-           commit_message: Actualiza el log automaticamente
-           commit_user_name: Tobba [Github Actions]
-           commit_user_email: tooba@gmx.us
-           commit_author: tooba
+      - name: Commit and Push del log
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Actualiza el log automaticamente
+          commit_user_name: Tobba [Github Actions]
+          commit_user_email: tooba@gmx.us
+          commit_author: tooba
