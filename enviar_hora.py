@@ -37,7 +37,7 @@ def main():
     log_message(mensaje,1)
 
 if __name__ == "__main__":
-    import os
-    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+    #import os
+    #os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
     main()
