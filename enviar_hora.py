@@ -2,6 +2,7 @@ import subprocess
 import time
 import os
 import requests
+from zoneinfo import ZoneInfo  # Python 3.9+
 from datetime import datetime
 
 # Configuración del bot de Telegram
@@ -15,14 +16,11 @@ log_dir = os.path.join(path, "logs")
 
 def log_message(message, param):
     """Escribe un mensaje en el archivo de log con la fecha y hora actual."""
-    timestamp = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    #with open(os.path.join(path, "stats.json"), "w") as file:
-    #file.write(json_data)
+    tz_madrid = ZoneInfo("Europe/Madrid")
+    timestamp = datetime.now(tz_madrid).strftime("%d-%m-%Y %H:%M:%S")
     log_file = os.path.join(log_dir, "saludo.log")
     with open(log_file, "a") as log:
         log.write(f"[{timestamp}] {message}\n")
-    #with open(LOG_FILE, "a") as log:
-    #    log.write(f"[{timestamp}] {message}\n")
     if param == 1:         
         send_telegram_message(BOT_TOKEN, CHAT_ID, message) # También envia el mensaje a Telegram
 
