@@ -33,7 +33,4 @@ jobs:
       - name: Commit and Push del log
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: Actualiza el log automaticamente
-          commit_user_name: Tobba [Github Actions]
-          commit_user_email: tooba@gmx.us
-          commit_author: tooba
+          commit_message: Actualiza el log automaticamente          
