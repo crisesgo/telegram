@@ -6,6 +6,9 @@ on:
 
 jobs:
   build: 
+    # Evita ejecutar si el push fue hecho por el bot (evita bucles)
+    if: github.event.pusher.name != 'github-actions[bot]'
+    
     runs-on: ubuntu-latest
     
     permissions:
@@ -16,7 +19,10 @@ jobs:
     steps:
       - name: Checkout del repo
         uses: actions/checkout@v5
-    
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
@@ -33,4 +39,6 @@ jobs:
       - name: Commit and Push del log
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: Actualiza el log automaticamente          
+          commit_message: Actualiza el log automaticamente    
+          push_options: '--force-with-lease'
+          
