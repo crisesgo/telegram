@@ -36,7 +36,7 @@ jobs:
       #    pip install requests
           
       - name: Run script
-        run: python prueba_echo.py
+        run: python prueba_echo_1.py
 
       - name: Commit and Push del log
         uses: stefanzweifel/git-auto-commit-action@v6
