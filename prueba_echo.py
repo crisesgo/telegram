@@ -1,1 +1,1 @@
-echo("Este es una prueba de echo")
+print("Este es una prueba de echo")
