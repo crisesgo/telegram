@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo  # Python 3.9+
 from datetime import datetime
 
 # Configuración del bot de Telegram
-BOT_TOKEN = "7902970233:AAHTvKovwB_YBlAnZ9a6GU6FpmOs2kkbTA0"  # Reemplaza con tu token de bot
+BOT_TOKEN = "token"  # Reemplaza con tu token de bot
 CHAT_ID = "8145837"       # Reemplaza con tu ID de chat
 
 # Archivo de log
